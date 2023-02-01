@@ -77,7 +77,9 @@ Expected operations
             "LGL": "Legal",
             "BUS": "Business Analysis"
         },
-        "daiRates": {
+        // quoteCurrency / baseRate structure needs to be reflected everywhere
+        "quoteCurrency": "DAI",
+        "baseRates": {
             "USD": 1.00,
             "EUR": 1.06654655
         },
