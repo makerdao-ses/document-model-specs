@@ -14,18 +14,21 @@ Informal definition
     5. Hourly rate, currency, and DAI exchange rate if the currency is not USD or DAI.
 
 Expected operations
-    INIT
-    UPDATE_NAME
-    UPDATE_DAI_RATES
-    UPDATE_PROJECTS
-    UPDATE_SKILLS
-    DELETE_DAI_RATES
-    DELETE_PROJECTS
-    DELETE_SKILLS
-    CREATE_ENTRIES
-    UPDATE_ENTRIES
-    DELETE_ENTRIES
-    SORT_ENTRIES 
+    X INIT 
+    x UPDATE_NAME 
+    x UPDATE_BASE_RATES //changed w/o operations from DAI --> BASE; or I can add another "meta" operation that would create new operation?  e.g., CREATE_BASE_RATE: 1. DELETE_DAI_RATES --> 2. CREATE_BASE_RATES. This "meta" operation assumes the use-mention distinction and would not use the objects but mention the keys/names. 
+    x UPDATE_PROJECTS
+    x UPDATE_SKILLS
+    x UPDATE_QUOTE_CURRENCY
+    x DELETE_BASE_RATES // changed w/o operations from DAI --> BASE
+    x DELETE_PROJECTS 
+    x DELETE_SKILLS
+    x CREATE_ENTRIES //what are we creating; are we creating new database record or are we just updating the existing ones?
+    x UPDATE_ENTRIES
+    x DELETE_ENTRIES
+    x SORT_ENTRIES 
+    x CREATE_TOTALS
+    X UPDATE_TOTALS
         Input example: [4,0,1,3,2]
 */
 {
@@ -64,20 +67,35 @@ Expected operations
                 "ref":"makerdao/project", 
                 "id":"core-unit/SES/2023/007",
                 "title": "Team Management and Operations"
-            },{
+            },
+            {
                 "ref":"makerdao/project", 
                 "id":"core-unit/SES/2023/008",
                 "title": "New Proposals Preparation"
             }
         ],
-        "skills": {
-            "SD": "Software Development",
-            "SD/FE": "Front-end Development",
-            "SD/BE": "Back-end Development",
-            "LGL": "Legal",
-            "BUS": "Business Analysis"
+        
+        "skills": [
+            {
+                "ref": "makerdao/skills", 
+                "id": "SD", 
+                "title": "Software Development"
+            },{
+                "ref":"makerdao/skills", 
+                "id":"SD/FE", 
+                "title":"Front-end Development", 
+            },{   
+                "ref":"makerdao/skills", 
+                "id":"SD/BE", 
+                "title":"Back-end Development", 
+            },{     
+                "ref":"makerdao/skills",
+                "id":"LGL", 
+                "title":"Legal" 
+            }
+        ]
         },
-        // quoteCurrency / baseRate structure needs to be reflected everywhere
+        
         "quoteCurrency": "DAI",
         "baseRates": {
             "USD": 1.00,
@@ -99,4 +117,6 @@ Expected operations
             "daiValue": 134.65464654
         }
     }
-}
+
+
+
