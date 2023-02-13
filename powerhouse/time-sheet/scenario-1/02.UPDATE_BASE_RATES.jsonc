@@ -1,0 +1,82 @@
+{
+    "operation": {
+        "index": 1,
+        "type": "UPDATE_BASE_RATES",
+        "input": {
+            "EUR": 1.0698794 // it's a mapping, not strictly an object, technically it is a json object/hybrid
+        }
+    },
+    "state": {
+        "name": "my jan 2023 timesheet",
+        "documentType": "powerhouse/time-sheet",
+        "revision": 2,
+        "created": "2023-02-05 12:15:01",
+        "lastModified": "2023-02-05 12:15:01",
+        "data": {
+            "projects": [
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/001",
+                    "title": "Protocol Expense Reporting"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/002",
+                    "title": "Legal Defense Setup"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/003",
+                    "title": "Powerhouse Time Tracking Workflow"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/004",
+                    "title": "End-game Operational Setup"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/005",
+                    "title": "Core Unit Operational Support"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/006",
+                    "title": "Patent Law Suit"
+                }
+            ],
+            "skills": [
+                {
+                    "ref": "makerdao/skill",
+                    "id": "SD",
+                    "title": "Software Development"
+                },
+                {
+                    "ref": "makerdao/skill",
+                    "id": "SD/FE",
+                    "title": "Front-end Development"
+                },
+                {
+                    "ref": "makerdao/skill",
+                    "id": "SD/BE",
+                    "title": "Back-end Development"
+                },
+                {
+                    "ref": "makerdao/skill",
+                    "id": "LGL",
+                    "title": "Legal"
+                }
+            ],
+            "quoteCurrency": "DAI",
+            "baseRates": {
+                "USD": 1.00,
+                "EUR": 1.0698794
+            },
+            "entries": [],
+            "totals": {
+                "duration": 0,
+                "cost": 0
+            }
+        }
+    }
+}

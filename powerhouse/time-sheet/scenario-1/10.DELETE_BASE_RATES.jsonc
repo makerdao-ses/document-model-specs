@@ -1,0 +1,64 @@
+{
+    "operation": {
+        "index": 9,
+        "type": "DELETE_BASE_RATES",
+        "input": {
+            "baseRates": {
+                "USD": 1.00,
+                "EUR": 1.06654655
+            }
+        }
+    },
+    "state": {
+        "name": "January_2023_timesheet",
+        "documentType": "powerhouse/time-sheet",
+        "revision": 10,
+        "created": "2023-02-05 12:15:01",
+        "lastModified": "2023-02-05 12:15:01",
+        "data": {
+            "projects": [],
+            "skills": [
+                {
+                    "ref": "makerdao/skill", 
+                    "id": "SD", 
+                    "title": "Software Development"
+                },{
+                    "ref":"makerdao/skill", 
+                    "id":"SD/FE", 
+                    "title":"Front-end Development"
+                },{   
+                    "ref":"makerdao/skill", 
+                    "id":"SD/BE", 
+                    "title":"Back-end Development"
+                },{     
+                    "ref":"makerdao/skill",
+                    "id":"LGL", 
+                    "title":"Legal" 
+                }, 
+                    {
+                    "ref": "makerdao/skill",
+                    "id": "BA",
+                    "title": "Business Analysis"
+                }
+            ]
+                },
+                "quoteCurrency": "DAI",
+                "baseRates": {}, //deleted the fields; mapping. 
+                "entries": [
+                    {
+                        "currency": "EUR",
+                        "date": "2023-01-09",
+                        "description": "Project Documentation",
+                        "duration": "01:15",
+                        "projects": [0,6], 
+                        "rate": 100.00, // 100 what? 
+                        "skills": ["BUS"]   
+                        
+                    }
+                ], 
+                "totals": {
+                    "duration": "01:15",
+                    "cost": 125 // ???
+                }
+            }
+        }

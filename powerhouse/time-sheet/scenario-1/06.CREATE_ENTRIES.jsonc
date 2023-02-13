@@ -1,0 +1,117 @@
+{
+    "operation": {
+        "index": 5,
+        "type": "CREATE_ENTRIES", // this operation seems wrong-->it should be UPDATE_ENTRIES 
+        "input": {
+            "entries": 
+                {
+                    "date": "2023-01-09",
+                    "duration": "01:15",
+                    "description": "Define the Powerhouse document model",
+                    "projects": [0,6],
+                    "skills": ["BUS"],
+                    "rate": 100.00, // hourly rate? 
+                    "currency": "EUR"
+                }
+        }
+    },
+    "state": {
+        "name": "January_2023_timesheet",
+        "documentType": "powerhouse/time-sheet",
+        "revision": 6,
+        "created": "2023-02-05 12:15:01",
+        "lastModified": "2023-02-05 12:15:01",
+        "data": {
+            "projects": [
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/001",
+                    "title": "Protocol Expense Reporting"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/002",
+                    "title": "Legal Defense Setup"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/003",
+                    "title": "Powerhouse Release One"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/004",
+                    "title": "End-game Operational Setup"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/005",
+                    "title": "Core Unit Operational Support"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/006",
+                    "title": "Patent Law Suit"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/007",
+                    "title": "Team Management and Operations"
+                },
+                {
+                    "ref": "makerdao/project",
+                    "id": "core-unit/SES/2023/008",
+                    "title": "New Proposals Preparation"
+                }
+            ],
+            "skills": [
+                {
+                    "ref": "makerdao/skill",
+                    "id": "SD",
+                    "title": "Software Development"
+                },
+                {
+                    "ref": "makerdao/skill",
+                    "id": "SD/FE",
+                    "title": "Front-end Development"
+                },
+                {
+                    "ref": "makerdao/skill",
+                    "id": "SD/BE",
+                    "title": "Back-end Development"
+                },
+                {
+                    "ref": "makerdao/skill",
+                    "id": "LGL",
+                    "title": "Legal"
+                }, 
+                {
+                    "ref": "makerdao/skill",
+                    "id": "BA",
+                    "title": "Business Analysis"
+                }
+            ],
+            "quoteCurrency": "DAI",
+            "baseRates": {
+                "USD": 1.00,
+                "EUR": 1.06654655
+            },
+            //added fields from the input
+            "entries": [
+                {
+                    "date": "2023-01-09",
+                    "duration": "01:15",
+                    "description": "Define the Powerhouse document model",
+                    "projects": [0,6],
+                    "skills": ["BUS"],
+                    "rate": 100.00,
+                    "currency": "EUR"
+                }
+            ],
+            "totals": {
+                "duration": "01:15",
+                "cost": 125
+            }
+        }
+    }
+}
