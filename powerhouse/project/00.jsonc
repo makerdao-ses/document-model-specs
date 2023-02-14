@@ -1,0 +1,24 @@
+{
+    "operation": null,
+    "state": {
+        "name": null,
+        "documentType": "powerhouse/projects",
+        "revision": 0,
+        "created": "2023-02-13 12:15:01",
+        "lastModified": "2023-02-13 12:15:01",
+        "data": {
+            "projectName": null,
+            "description": null,
+            "startDate": null,
+            "endDate": null,
+            "budget": {
+                "quoteCurrency": "DAI",
+                "amount": 0
+            },
+            "assignedSkills": [],
+            "assignedUsers": [],
+            "progress": 0, //percentage or time (e.g. 50% or 3/6 months)
+            "status": "Not Started"
+        }
+    }
+}
