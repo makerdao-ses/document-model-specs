@@ -1,0 +1,123 @@
+/*
+    Team submits a monthly budget for a list of accounts. The expenses can by grouped under a `group` attribute and a `category`.
+    The document also represents the state of the auditing process: 
+    1. Team sets bugdet as ready to review 
+    2. Auditor either approves or escalates the budget if there is an issue
+    3. If there is any change after the budget is approved then it must be approved again
+
+    Accounts have the following information:
+    1. Wallet address
+    2. Name
+    3. Current balance
+    4. Topup transter
+    5. Expenses
+
+    Expenses listed for each account contain:
+    1. Category, which can be a reference to category shared among different teams
+    2. Group (optional), which can be a reference to group shared among different teams
+    3. If it is an headcount expense
+    4. The budget cap
+    5. The actual value of the expense
+    6. The payment done to the wallet in that month
+    7. The forecast for the next 3 months for that expense
+
+Expected operations
+    X INIT
+    x ADD_ACCOUNT
+    x ADD_LINE_ITEM
+    x UPDATE_ACCOUNT
+    x UPDATE_LINE_ITEM
+    x DELETE_ACCOUNT
+    x DELETE_LINE_ITEM
+    x SET_REVIEW
+    x APPROVE_BUDGET
+    x ESCALATE_BUDGET
+*/
+
+{
+    "name": "SES January 2023",
+    "documentType": "powerhouse/budget-statement",
+    "revision": 0,
+    "created": "2023-02-21 10:15:26",
+    "lastModified": "2023-02-21 12:15:26",
+    "data": {
+        "owner": {
+            "ref": "makerdao/core-unit",
+            "id": "SES-001",
+            "title": "Sustainable Ecosystem Scaling"
+        },
+        "month": "2023/01",
+        "status": "Final", // Draft, Review, Final, Escalated
+        "quoteCurrency": "DAI",
+        "accounts": [
+            {
+                "address": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+                "name": "Grants Program",
+                "currentBalance": 167500,
+                "topupTransfer": -55000,
+                "lineItems": [
+                    {
+                        "category": {
+                            "ref": "makerdao/budget-category",
+                            "id": "TravelAndEntertainment",
+                            "title": "Travel & Entertainment"
+                        },
+                        "group": {
+                            "ref": "makerdao/budget-group",
+                            "id": "LegalResearch",
+                            "title": "Legal Research"
+                        },
+                        "headcountExpense": true,
+                        "budgetCap": 10000,
+                        "payment": 0,
+                        "actual": 4000,
+                        "forecast": [
+                            {
+                                "month": "2023/02",
+                                "value": 150
+                            },
+                            {
+                                "month": "2023/03",
+                                "value": 200
+                            },
+                            {
+                                "month": "2023/04",
+                                "value": 150
+                            }
+                        ]
+                    },
+                    {
+                        "category": {
+                            "ref": "makerdao/budget-category",
+                            "id": "CommunityDevelopmentExpense",
+                            "title": "Community Development Expense"
+                        },
+                        "group": {
+                            "ref": "makerdao/budget-group",
+                            "id": "GovernanceResearch",
+                            "title": "Governance Research"
+                        },
+                        "headcountExpense": false,
+                        "budgetCap": 10000,
+                        "payment": 0,
+                        "actual": 100,
+                        "forecast": [
+                            {
+                                "month": "2023/02",
+                                "value": 150
+                            },
+                            {
+                                "month": "2023/03",
+                                "value": 200
+                            },
+                            {
+                                "month": "2023/04",
+                                "value": 150
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

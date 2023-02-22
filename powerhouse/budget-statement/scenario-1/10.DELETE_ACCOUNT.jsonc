@@ -1,0 +1,27 @@
+{
+    "operation": {
+        "index": 10,
+        "type": "DELETE_ACCOUNT",
+        "input": {
+            "accountIndex": 0
+        }
+    },
+    "state": {
+        "name": "SES January 2023",
+        "documentType": "powerhouse/budget-statement",
+        "revision": 11,
+        "created": "2023-02-21 10:15:26",
+        "lastModified": "2023-02-21 11:52:31",
+        "data": {
+            "owner": {
+                "ref": "makerdao/core-unit",
+                "id": "SES-001",
+                "title": "Sustainable Ecosystem Scaling"
+            },
+            "month": "2023-01",
+            "status": "Draft",
+            "quoteCurrency": "DAI",
+            "accounts": []
+        }
+    }
+}

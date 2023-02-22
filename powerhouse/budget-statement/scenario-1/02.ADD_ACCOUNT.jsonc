@@ -1,0 +1,101 @@
+{
+    "operation": {
+        "index": 1,
+        "type": "ADD_ACCOUNT",
+        "input": {
+            "address": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+            "name": "Grants Program",
+            "currentBalance": 0,
+            "topupTransfer": 0,
+            "lineItems": [
+                {
+                    "category": {
+                        "ref": "makerdao/budget-category",
+                        "id": "CommunityDevelopmentExpense",
+                        "title": "Community Development Expense"
+                    },
+                    "group": {
+                        "ref": "makerdao/budget-group",
+                        "id": "GovernanceResearch",
+                        "title": "Governance Research"
+                    },
+                    "headcountExpense": false,
+                    "budgetCap": 100000,
+                    "payment": 0,
+                    "actual": 25025,
+                    "forecast": [
+                        {
+                            "month": "2023/02",
+                            "value": 30000
+                        },
+                        {
+                            "month": "2023/03",
+                            "value": 30000
+                        },
+                        {
+                            "month": "2023/04",
+                            "value": 20000
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "state": {
+        "name": "SES January 2023",
+        "documentType": "powerhouse/budget-statement",
+        "revision": 2,
+        "created": "2023-02-21 10:15:26",
+        "lastModified": "2023-02-21 11:10:20",
+        "data": {
+            "owner": {
+                "ref": "makerdao/core-unit",
+                "id": "SES-001",
+                "title": "Sustainable Ecosystem Scaling"
+            },
+            "month": "2023-01",
+            "status": "Draft",
+            "quoteCurrency": "DAI",
+            "accounts": [
+                {
+                    "address": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+                    "name": "Grants Program",
+                    "currentBalance": 0,
+                    "topupTransfer": 0,
+                    "lineItems": [
+                        {
+                            "category": {
+                                "ref": "makerdao/budget-category",
+                                "id": "CommunityDevelopmentExpense",
+                                "title": "Community Development Expense"
+                            },
+                            "group": {
+                                "ref": "makerdao/budget-group",
+                                "id": "GovernanceResearch",
+                                "title": "Governance Research"
+                            },
+                            "headcountExpense": false,
+                            "budgetCap": 100000,
+                            "payment": 0,
+                            "actual": 25025,
+                            "forecast": [
+                                {
+                                    "month": "2023/02",
+                                    "value": 30000
+                                },
+                                {
+                                    "month": "2023/03",
+                                    "value": 30000
+                                },
+                                {
+                                    "month": "2023/04",
+                                    "value": 20000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
