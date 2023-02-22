@@ -1,17 +1,10 @@
 {
     "operation": null,
     "state": {
-        "name": null,
-        "documentType": "powerhouse/budget-statement",
-        "revision": 0,
-        "created": "2023-02-21 10:15:26",
-        "lastModified": "2023-02-21 10:15:26",
-        "data": {
-            "owner": null,
-            "month": null,
-            "status": "Draft", // Draft, Review, Final, Escalated
-            "quoteCurrency": null,
-            "accounts": []
-        }
+        "owner": null,
+        "month": null,
+        "status": "Draft", // Draft, Review, Final, Escalated
+        "quoteCurrency": null,
+        "accounts": []
     }
 }

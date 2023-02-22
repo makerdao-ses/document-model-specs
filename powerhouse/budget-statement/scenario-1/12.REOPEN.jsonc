@@ -1,28 +1,8 @@
 {
     "operation": {
-        "index": 2,
-        "type": "ADD_LINE_ITEM",
-        "input": {
-            "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f", // select account by address
-            "lineItems": [
-                {
-                    "category": {
-                        "ref": "makerdao/budget-category",
-                        "id": "TravelAndEntertainment",
-                        "title": "Travel & Entertainment",
-                        "headcountExpense": true
-                    },
-                    "group": {
-                        "ref": "makerdao/project",
-                        "id": "core-unit/SES/2023/005",
-                        "title": "Core Unit Operational Support"
-                    },
-                    "budgetCap": 10000,
-                    "payment": 0,
-                    "actual": 4000
-                }
-            ]
-        }
+        "index": 11,
+        "type": "REOPEN",
+        "input": {}
     },
     "state": {
         "owner": {
@@ -31,24 +11,24 @@
             "title": "Sustainable Ecosystem Scaling"
         },
         "month": "2023/01",
-        "status": "Draft",
+        "status": "Review", // status goes back to Review
         "quoteCurrency": "DAI",
         "accounts": [
             {
                 "address": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
                 "name": "Grants Program",
                 "accountBalance": {
-                    "timestamp": null,
-                    "value": null
+                    "timestamp": "2023-02-21 11:22:09",
+                    "value": 4048.02
                 },
                 "targetBalance": {
-                    "comment": null,
-                    "value": null
+                    "comment": "3 months of operational runway",
+                    "value": 5048.02
                 },
                 "topupTransaction": {
-                    "id": null,
-                    "requestedValue": null,
-                    "value": null
+                    "id": "eth:0x3F23D0E301C458B095A02b12E3bC4c752a844eD9",
+                    "requestedValue": 1000,
+                    "value": 1000
                 },
                 "lineItems": [
                     {
@@ -69,10 +49,6 @@
                         "forecast": [
                             {
                                 "month": "2023/02",
-                                "value": 30000
-                            },
-                            {
-                                "month": "2023/03",
                                 "value": 30000
                             },
                             {

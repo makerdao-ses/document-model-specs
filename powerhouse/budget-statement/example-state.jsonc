@@ -1,25 +1,30 @@
 /*
     Team submits a monthly budget for a list of accounts. The expenses can by grouped under a `group` attribute and a `category`.
+    
     The document also represents the state of the auditing process: 
     1. Team sets bugdet as ready to review 
     2. Auditor either approves or escalates the budget if there is an issue
     3. If there is any change after the budget is approved then it must be approved again
 
+    The funding process of the accounts is done in two steps:
+    1. Team requests topup according to the difference between the target balance and the current balance
+    2. Topup transaction is stored in the document along with value transfered
+
     Accounts have the following information:
     1. Wallet address
     2. Name
-    3. Current balance
-    4. Topup transter
-    5. Expenses
+    3. Current account balance in a given timestamp
+    4. Target balance
+    5. Topup transfer information
+    6. Expenses
 
     Expenses listed for each account contain:
-    1. Category, which can be a reference to category shared among different teams
-    2. Group (optional), which can be a reference to group shared among different teams
-    3. If it is an headcount expense
-    4. The budget cap
-    5. The actual value of the expense
-    6. The payment done to the wallet in that month
-    7. The forecast for the next 3 months for that expense
+    1. Category, which can be a reference to a category shared among different teams
+    2. Group (optional), which can be a reference to another document like a Project
+    3. The budget cap
+    4. The actual value of the expense
+    5. The payment done to the wallet in that month
+    6. The forecast for the next 3 months for that expense
 
 Expected operations
     X INIT
@@ -29,17 +34,20 @@ Expected operations
     x UPDATE_LINE_ITEM
     x DELETE_ACCOUNT
     x DELETE_LINE_ITEM
-    x SET_REVIEW
-    x APPROVE_BUDGET
-    x ESCALATE_BUDGET
+    x SUBMIT_FOR_REVIEW
+    x APPROVE
+    x ESCALATE
+    x REOPEN
+    x REQUEST_TOPUP
+    x TRANSFER_TOPUP
 */
 
 {
     "name": "SES January 2023",
     "documentType": "powerhouse/budget-statement",
-    "revision": 0,
+    "revision": 10,
     "created": "2023-02-21 10:15:26",
-    "lastModified": "2023-02-21 12:15:26",
+    "lastModified": "2023-02-21 13:12:49",
     "data": {
         "owner": {
             "ref": "makerdao/core-unit",
@@ -51,38 +59,49 @@ Expected operations
         "quoteCurrency": "DAI",
         "accounts": [
             {
-                "address": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+                "address": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
                 "name": "Grants Program",
-                "currentBalance": 167500,
-                "topupTransfer": -55000,
+                "accountBalance": {
+                    "timestamp": "2023-02-21 11:22:09",
+                    "value": 4048.02
+                },
+                "targetBalance": {
+                    "comment": "3 months of operational runway",
+                    "value": 5048.02
+                },
+                "topupTransaction": {
+                    "id": "eth:0x3F23D0E301C458B095A02b12E3bC4c752a844eD9",
+                    "requestedValue": 1000,
+                    "value": 1000
+                },
                 "lineItems": [
                     {
                         "category": {
                             "ref": "makerdao/budget-category",
                             "id": "TravelAndEntertainment",
-                            "title": "Travel & Entertainment"
+                            "title": "Travel & Entertainment",
+                            "headcountExpense": true
                         },
                         "group": {
-                            "ref": "makerdao/budget-group",
-                            "id": "LegalResearch",
-                            "title": "Legal Research"
+                            "ref": "makerdao/project",
+                            "id": "core-unit/SES/2023/005",
+                            "title": "Core Unit Operational Support"
                         },
-                        "headcountExpense": true,
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 4000,
                         "forecast": [
                             {
                                 "month": "2023/02",
-                                "value": 150
+                                "value": 30000
                             },
                             {
                                 "month": "2023/03",
-                                "value": 200
+                                "value": 40000
                             },
                             {
                                 "month": "2023/04",
-                                "value": 150
+                                "value": 30000
                             }
                         ]
                     },
@@ -90,31 +109,18 @@ Expected operations
                         "category": {
                             "ref": "makerdao/budget-category",
                             "id": "CommunityDevelopmentExpense",
-                            "title": "Community Development Expense"
+                            "title": "Community Development Expense",
+                            "headcountExpense": false
                         },
                         "group": {
-                            "ref": "makerdao/budget-group",
-                            "id": "GovernanceResearch",
-                            "title": "Governance Research"
+                            "ref": "makerdao/project",
+                            "id": "core-unit/SES/2023/005",
+                            "title": "Core Unit Operational Support"
                         },
-                        "headcountExpense": false,
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 100,
-                        "forecast": [
-                            {
-                                "month": "2023/02",
-                                "value": 150
-                            },
-                            {
-                                "month": "2023/03",
-                                "value": 200
-                            },
-                            {
-                                "month": "2023/04",
-                                "value": 150
-                            }
-                        ]
+                        "forecast": null
                     }
                 ]
             }

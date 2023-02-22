@@ -1,15 +1,9 @@
 {
     "operation": {
-        "index": 0,
-        "type": "INIT",
+        "index": 12,
+        "type": "DELETE_ACCOUNT",
         "input": {
-            "owner": {
-                "ref": "makerdao/core-unit",
-                "id": "SES-001",
-                "title": "Sustainable Ecosystem Scaling"
-            },
-            "month": "2023/01",
-            "quoteCurrency": "DAI"
+            "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f"
         }
     },
     "state": {
@@ -19,7 +13,7 @@
             "title": "Sustainable Ecosystem Scaling"
         },
         "month": "2023/01",
-        "status": "Draft",
+        "status": "Final",
         "quoteCurrency": "DAI",
         "accounts": []
     }
