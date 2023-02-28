@@ -2,23 +2,73 @@
     "operation": null,
     "state": {
         "name": null,
-        "documentType": "powerhouse/projects",
+        "documentType": "powerhouse/project",
         "revision": 0,
         "created": "2023-02-13 12:15:01",
         "lastModified": "2023-02-13 12:15:01",
         "data": {
+            "status": "Draft",
+            "statusDates": {
+                "proposalDate": null,
+                "acceptedDate": null,
+                "startDate": null,
+                "endDate": null
+            },
             "projectName": null,
             "description": null,
-            "startDate": null,
-            "endDate": null,
-            "budget": {
-                "quoteCurrency": "DAI",
-                "amount": 0
-            },
+            "projectType": null,
             "assignedSkills": [],
+            "projectOwner": [], //Owner reference that can be user/team/subdao
             "assignedUsers": [],
-            "progress": 0, //percentage or time (e.g. 50% or 3/6 months)
-            "status": "Not Started"
+            "objectives": [],
+            "components": [
+                {
+                    "code": null,
+                    "title": null,
+                    "description": null,
+                    "expectedDeliverables": [
+                        {
+                            "code": null,
+                            "title": null,
+                            "description": null
+                        }
+                    ]
+                }
+            ], //subsdivision of work to be performed to complete the project
+            "progressUpdates": [
+                {
+                    "description": null,
+                    "timestamp": null,
+                    "statusChange": null, //new status value
+                    "componentProgress": [
+                        {
+                            "componentCode": null,
+                            "progress": null, //e.g. 0.2
+                            "deliverables": [
+                                {
+                                    "deliverableCode": null, //can be null if unexpected deliverable
+                                    "url": null,
+                                    "title": null
+                                }
+                            ]
+                        }
+                    ],
+                    "expenseUpdate": {
+                        "compensationAndBenefits": [
+                            {
+                                "skillId": null, //e.g. SD
+                                "amountSpent": null
+                            }
+                        ],
+                        "otherExpense": [
+                            {
+                                "budgetCategory": "Travel and Entertainment",
+                                "amountSpent": null
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     }
 }
