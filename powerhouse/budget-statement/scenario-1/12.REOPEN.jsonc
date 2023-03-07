@@ -11,7 +11,7 @@
             "title": "Sustainable Ecosystem Scaling"
         },
         "month": "2023/01",
-        "status": "Review", // status goes back to Review
+        "status": "Draft", // status goes back to Draft
         "quoteCurrency": "DAI",
         "accounts": [
             {
@@ -45,11 +45,11 @@
                         },
                         "budgetCap": 100000,
                         "payment": 0,
-                        "actual": 25025,
+                        "actual": 8000,
                         "forecast": [
                             {
                                 "month": "2023/02",
-                                "value": 30000
+                                "value": 50000
                             },
                             {
                                 "month": "2023/04",
@@ -72,7 +72,7 @@
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 4000,
-                        "forecast": null
+                        "forecast": []
                     }
                 ]
             }

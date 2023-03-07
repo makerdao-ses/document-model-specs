@@ -96,7 +96,7 @@
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 4000,
-                        "forecast": null
+                        "forecast": []
                     }
                 ]
             }

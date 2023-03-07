@@ -3,7 +3,7 @@
         "index": 12,
         "type": "DELETE_ACCOUNT",
         "input": {
-            "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f"
+            "accounts": ["eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f"]
         }
     },
     "state": {
@@ -13,7 +13,7 @@
             "title": "Sustainable Ecosystem Scaling"
         },
         "month": "2023/01",
-        "status": "Final",
+        "status": "Draft",
         "quoteCurrency": "DAI",
         "accounts": []
     }

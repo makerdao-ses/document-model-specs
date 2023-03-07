@@ -3,18 +3,16 @@
         "index": 8,
         "type": "DELETE_LINE_ITEM",
         "input": {
+            "account": "eth:null",
             "lineItems": [
                 {
-                    "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
-                    "lineItem": {
-                        "category": "CommunityDevelopmentExpense",
-                        "group": "core-unit/SES/2023/005"
-                    }
+                    "category": "CommunityDevelopmentExpense",
+                    "group": "core-unit/SES/2023/005"
                 }
             ]
         }
     },
     "error": {
-        "reason": "Budget is marked as Final"
+        "message": "Account with address eth:null not found"
     }
 }

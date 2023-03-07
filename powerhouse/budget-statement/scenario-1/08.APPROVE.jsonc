@@ -1,7 +1,7 @@
 {
     "operation": {
         "index": 7,
-        "type": "APPROVE_BUDGET",
+        "type": "APPROVE",
         "input": {}
     },
     "state": {
@@ -45,11 +45,11 @@
                         },
                         "budgetCap": 100000,
                         "payment": 0,
-                        "actual": 25025,
+                        "actual": 8000,
                         "forecast": [
                             {
                                 "month": "2023/02",
-                                "value": 30000
+                                "value": 50000
                             },
                             {
                                 "month": "2023/04",
@@ -70,9 +70,9 @@
                             "title": "Core Unit Operational Support"
                         },
                         "budgetCap": 10000,
-                        "payment": 1000,
-                        "actual": 8000,
-                        "forecast": null
+                        "payment": 0,
+                        "actual": 4000,
+                        "forecast": []
                     }
                 ]
             }

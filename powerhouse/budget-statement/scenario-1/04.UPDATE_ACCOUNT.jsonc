@@ -5,7 +5,7 @@
         "input": {
             "accounts": [
                 {
-                    "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
+                    "address": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
                     "accountBalance": {
                         "timestamp": "2023-02-21 11:22:09",
                         "value": 4048.02
@@ -90,7 +90,7 @@
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 4000,
-                        "forecast": null
+                        "forecast": []
                     }
                 ]
             }

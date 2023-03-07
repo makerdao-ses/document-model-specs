@@ -1,7 +1,7 @@
 {
     "operation": {
         "index": 10,
-        "type": "REQUEST_TOPUP",
+        "type": "TRANSFER_TOPUP",
         "input": {
             "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
             "transaction": "eth:0x3F23D0E301C458B095A02b12E3bC4c752a844eD9",
@@ -15,7 +15,7 @@
             "title": "Sustainable Ecosystem Scaling"
         },
         "month": "2023/01",
-        "status": "Draft",
+        "status": "Final",
         "quoteCurrency": "DAI",
         "accounts": [
             {
@@ -49,11 +49,11 @@
                         },
                         "budgetCap": 100000,
                         "payment": 0,
-                        "actual": 25025,
+                        "actual": 8000,
                         "forecast": [
                             {
                                 "month": "2023/02",
-                                "value": 30000
+                                "value": 50000
                             },
                             {
                                 "month": "2023/04",
@@ -76,7 +76,7 @@
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 4000,
-                        "forecast": null
+                        "forecast": []
                     }
                 ]
             }

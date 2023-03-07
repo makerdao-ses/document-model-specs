@@ -120,7 +120,7 @@ Expected operations
                         "budgetCap": 10000,
                         "payment": 0,
                         "actual": 100,
-                        "forecast": null
+                        "forecast": []
                     }
                 ]
             }
