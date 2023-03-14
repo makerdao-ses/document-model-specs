@@ -1,7 +1,7 @@
 {
     "operation": {
         "index": 11,
-        "type": "REOPEN",
+        "type": "REOPEN_TO_DRAFT",
         "input": {}
     },
     "state": {
