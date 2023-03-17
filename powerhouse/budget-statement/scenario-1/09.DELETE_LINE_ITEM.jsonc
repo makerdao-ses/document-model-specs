@@ -1,0 +1,18 @@
+{
+    "operation": {
+        "index": 8,
+        "type": "DELETE_LINE_ITEM",
+        "input": {
+            "account": "eth:null",
+            "lineItems": [
+                {
+                    "category": "CommunityDevelopmentExpense",
+                    "group": "core-unit/SES/2023/005"
+                }
+            ]
+        }
+    },
+    "error": {
+        "message": "Account with address eth:null not found"
+    }
+}

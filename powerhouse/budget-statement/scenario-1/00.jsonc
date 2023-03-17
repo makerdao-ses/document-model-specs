@@ -1,0 +1,10 @@
+{
+    "operation": null,
+    "state": {
+        "owner": null,
+        "month": null,
+        "status": "Draft", // Draft, Review, Final, Escalated
+        "quoteCurrency": null,
+        "accounts": []
+    }
+}

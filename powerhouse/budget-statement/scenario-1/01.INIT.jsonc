@@ -1,0 +1,28 @@
+{
+    "operation": {
+        "index": 0,
+        "type": "INIT",
+        "input": {
+            "data": {
+                "owner": {
+                    "ref": "makerdao/core-unit",
+                    "id": "SES-001",
+                    "title": "Sustainable Ecosystem Scaling"
+                },
+                "month": "2023/01",
+                "quoteCurrency": "DAI"
+            }
+        }
+    },
+    "state": {
+        "owner": {
+            "ref": "makerdao/core-unit",
+            "id": "SES-001",
+            "title": "Sustainable Ecosystem Scaling"
+        },
+        "month": "2023/01",
+        "status": "Draft",
+        "quoteCurrency": "DAI",
+        "accounts": []
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "operation": {
+        "index": 1,
+        "type": "ADD_ACCOUNT",
+        "input": {
+            "accounts": [
+                {
+                    "address": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
+                    "name": "Grants Program",
+                    "lineItems": [
+                        {
+                            "category": {
+                                "ref": "makerdao/budget-category",
+                                "id": "CommunityDevelopmentExpense",
+                                "title": "Community Development Expense",
+                                "headcountExpense": false
+                            },
+                            "group": {
+                                "ref": "makerdao/project",
+                                "id": "core-unit/SES/2023/005",
+                                "title": "Core Unit Operational Support"
+                            },
+                            "budgetCap": 100000,
+                            "payment": 0,
+                            "actual": 25025,
+                            "forecast": [
+                                {
+                                    "month": "2023/02",
+                                    "value": 30000
+                                },
+                                {
+                                    "month": "2023/03",
+                                    "value": 30000
+                                },
+                                {
+                                    "month": "2023/04",
+                                    "value": 20000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "state": {
+        "owner": {
+            "ref": "makerdao/core-unit",
+            "id": "SES-001",
+            "title": "Sustainable Ecosystem Scaling"
+        },
+        "month": "2023/01",
+        "status": "Draft",
+        "quoteCurrency": "DAI",
+        "accounts": [
+            {
+                "address": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
+                "name": "Grants Program",
+                "accountBalance": {
+                    "timestamp": null,
+                    "value": null
+                },
+                "targetBalance": {
+                    "comment": null,
+                    "value": null
+                },
+                "topupTransaction": {
+                    "id": null,
+                    "requestedValue": null,
+                    "value": null
+                },
+                "lineItems": [
+                    {
+                        "category": {
+                            "ref": "makerdao/budget-category",
+                            "id": "CommunityDevelopmentExpense",
+                            "title": "Community Development Expense",
+                            "headcountExpense": false
+                        },
+                        "group": {
+                            "ref": "makerdao/project",
+                            "id": "core-unit/SES/2023/005",
+                            "title": "Core Unit Operational Support"
+                        },
+                        "budgetCap": 100000,
+                        "payment": 0,
+                        "actual": 25025,
+                        "forecast": [
+                            {
+                                "month": "2023/02",
+                                "value": 30000
+                            },
+                            {
+                                "month": "2023/03",
+                                "value": 30000
+                            },
+                            {
+                                "month": "2023/04",
+                                "value": 20000
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

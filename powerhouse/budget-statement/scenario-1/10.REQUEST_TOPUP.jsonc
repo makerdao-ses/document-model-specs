@@ -1,0 +1,84 @@
+{
+    "operation": {
+        "index": 9,
+        "type": "REQUEST_TOPUP", // separate into topup request and topup sent
+        "input": {
+            "account": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
+            "value": 1000
+        }
+    },
+    "state": {
+        "owner": {
+            "ref": "makerdao/core-unit",
+            "id": "SES-001",
+            "title": "Sustainable Ecosystem Scaling"
+        },
+        "month": "2023/01",
+        "status": "Final",
+        "quoteCurrency": "DAI",
+        "accounts": [
+            {
+                "address": "eth:0xb5eB779cE300024EDB3dF9b6C007E312584f6F4f",
+                "name": "Grants Program",
+                "accountBalance": {
+                    "timestamp": "2023-02-21 11:22:09",
+                    "value": 4048.02
+                },
+                "targetBalance": {
+                    "comment": "3 months of operational runway",
+                    "value": 5048.02
+                },
+                "topupTransaction": {
+                    "id": null,
+                    "requestedValue": 1000,
+                    "value": null
+                },
+                "lineItems": [
+                    {
+                        "category": {
+                            "ref": "makerdao/budget-category",
+                            "id": "CommunityDevelopmentExpense",
+                            "title": "Community Development Expense",
+                            "headcountExpense": false
+                        },
+                        "group": {
+                            "ref": "makerdao/project",
+                            "id": "core-unit/SES/2023/005",
+                            "title": "Core Unit Operational Support"
+                        },
+                        "budgetCap": 100000,
+                        "payment": 0,
+                        "actual": 8000,
+                        "forecast": [
+                            {
+                                "month": "2023/02",
+                                "value": 50000
+                            },
+                            {
+                                "month": "2023/04",
+                                "value": 20000
+                            }
+                        ]
+                    },
+                    {
+                        "category": {
+                            "ref": "makerdao/budget-category",
+                            "id": "TravelAndEntertainment",
+                            "title": "Travel & Entertainment",
+                            "headcountExpense": true
+                        },
+                        "group": {
+                            "ref": "makerdao/project",
+                            "id": "core-unit/SES/2023/005",
+                            "title": "Core Unit Operational Support"
+                        },
+                        "budgetCap": 10000,
+                        "payment": 0,
+                        "actual": 4000,
+                        "forecast": []
+                    }
+                ]
+            }
+        ]
+    }
+}
