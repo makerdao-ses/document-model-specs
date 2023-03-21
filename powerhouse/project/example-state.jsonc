@@ -1,46 +1,10 @@
 /*
-    A team submits a project proposal with details on the project's objectives, scope, and budget. 
-    The budget can be grouped under different categories, and each category can have subcategories.
+    A team submits a project proposal with details on the project's objectives, scope, assigned skills and componenets. 
 
     The document also represents the state of the project process: 
     1. Team sets project as ready to start 
     2. Governance either accepts or rejects the proposal
-    3. If there is any change after the budget is approved then it must be approved again
 
-    The funding process of the accounts is done in two steps:
-    1. Team requests topup according to the difference between the target balance and the current balance
-    2. Topup transaction is stored in the document along with value transfered
-
-     have the following information:
-    1. Wallet address
-    2. Name
-    3. Current account balance in a given timestamp
-    4. Target balance
-    5. Topup transfer information
-    6. Expenses
-
-    Expenses listed for each account contain:
-    1. Category, which can be a reference to a category shared among different teams
-    2. Group (optional), which can be a reference to another document like a Project
-    3. The budget cap
-    4. The actual value of the expense
-    5. The payment done to the wallet in that month
-    6. The forecast for the next 3 months for that expense
-
-Expected operations
-    X INIT
-    x ADD_ACCOUNT
-    x ADD_LINE_ITEM
-    x UPDATE_ACCOUNT
-    x UPDATE_LINE_ITEM
-    x DELETE_ACCOUNT
-    x DELETE_LINE_ITEM
-    x SUBMIT_FOR_REVIEW
-    x APPROVE
-    x ESCALATE
-    x REOPEN
-    x REQUEST_TOPUP
-    x TRANSFER_TOPUP
 */
 
 {
