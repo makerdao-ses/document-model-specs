@@ -2,7 +2,7 @@
     Team submits a monthly budget for a list of accounts. The expenses can by grouped under a `group` attribute and a `category`.
     
     The document also represents the state of the auditing process: 
-    1. Team sets bugdet as ready to review 
+    1. Team sets budget as ready to review 
     2. Auditor either approves or escalates the budget if there is an issue
     3. If there is any change after the budget is approved then it must be approved again
 

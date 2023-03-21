@@ -1,0 +1,132 @@
+/*
+    A team submits a project proposal with details on the project's objectives, scope, and budget. 
+    The budget can be grouped under different categories, and each category can have subcategories.
+
+    The document also represents the state of the project process: 
+    1. Team sets project as ready to start 
+    2. Governance either accepts or rejects the proposal
+    3. If there is any change after the budget is approved then it must be approved again
+
+    The funding process of the accounts is done in two steps:
+    1. Team requests topup according to the difference between the target balance and the current balance
+    2. Topup transaction is stored in the document along with value transfered
+
+     have the following information:
+    1. Wallet address
+    2. Name
+    3. Current account balance in a given timestamp
+    4. Target balance
+    5. Topup transfer information
+    6. Expenses
+
+    Expenses listed for each account contain:
+    1. Category, which can be a reference to a category shared among different teams
+    2. Group (optional), which can be a reference to another document like a Project
+    3. The budget cap
+    4. The actual value of the expense
+    5. The payment done to the wallet in that month
+    6. The forecast for the next 3 months for that expense
+
+Expected operations
+    X INIT
+    x ADD_ACCOUNT
+    x ADD_LINE_ITEM
+    x UPDATE_ACCOUNT
+    x UPDATE_LINE_ITEM
+    x DELETE_ACCOUNT
+    x DELETE_LINE_ITEM
+    x SUBMIT_FOR_REVIEW
+    x APPROVE
+    x ESCALATE
+    x REOPEN
+    x REQUEST_TOPUP
+    x TRANSFER_TOPUP
+*/
+
+{
+    "name": "SES-2023",
+    "documentType": "powerhouse/projects",
+    "revision": 0,
+    "created": "2023-02-13 12:15:01",
+    "lastModified": "2023-02-13 12:15:01",
+    "data": {
+        "status": "Draft",
+        "statusDates": {
+            "proposalDate": null,
+            "acceptedDate": null,
+            "startDate": null,
+            "endDate": null
+        },
+        "projectName": "Protocol Expense Reporting",
+        "description": "Provide full coverage of expenses of the Maker Protocol",
+        "projectType": "CAPEX",
+        "assignedSkills": [
+            {
+                "ref": "makerdao/skill",
+                "id": "SD",
+                "title": "Software Development"
+            },
+            {
+                "ref": "makerdao/skill",
+                "id": "SD/FE",
+                "title": "Front-end Development"
+            },
+            {
+                "ref": "makerdao/skill",
+                "id": "SD/BE",
+                "title": "Back-end Development"
+            }
+        ],
+        "projectOwner": [], //Owner reference that can be user/team/subdao
+        "assignedUsers": [],
+        "objectives": [],
+        "components": [
+            {
+                "code": "PEA",
+                "title": "Protocol Expense Accounting",
+                "description": "Design and develop expenses.makerdao.network, the API and budget tool to capture and present protocol expenses",
+                "expectedDeliverables": [
+                    {
+                        "code": "PEA-01",
+                        "title": "On-chain Data Reconciliation",
+                        "description": "Tie expense reports directly to on-chain transactions"
+                    }
+                ]
+            }
+        ], //subsdivision of work to be performed to complete the project
+        "progressUpdates": [
+            {
+                "description": null,
+                "timestamp": null,
+                "statusChange": null, //new status value
+                "componentProgress": [
+                    {
+                        "componentCode": null,
+                        "progress": null, //e.g. 0.2
+                        "deliverables": [
+                            {
+                                "deliverableCode": null, //can be null if unexpected deliverable
+                                "url": null,
+                                "title": null
+                            }
+                        ]
+                    }
+                ],
+                "expenseUpdate": {
+                    "compensationAndBenefits": [
+                        {
+                            "skillId": null, //e.g. SD
+                            "amountSpent": null
+                        }
+                    ],
+                    "otherExpense": [
+                        {
+                            "budgetCategory": "Travel and Entertainment",
+                            "amountSpent": null
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

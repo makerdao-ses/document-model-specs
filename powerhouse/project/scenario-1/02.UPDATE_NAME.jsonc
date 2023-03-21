@@ -16,7 +16,7 @@
                 "description": "Provide full coverage of expenses of the Maker Protocol",
                 "startDate": "2022-01-01 00:15:01",
                 "endDate": "2024-01-12 00:15:01",
-                "category": "CAPEX",
+                "projectType": "CAPEX",
                 "budget": {
                     "quoteCurrency": "DAI",
                     "amount": 1000000
@@ -39,6 +39,8 @@
                     }
                 ],
                 "assignedUsers": [], //define 
+                "objectives": [], 
+                "components": [], 
                 "progress": 0, //percentage or time (e.g. 50% or 3/6 months)
                 "status": "Not Started"
             }
