@@ -1,0 +1,241 @@
+
+
+
+{
+    "operation": {
+        "index":1,
+        "type": "ADD_TRANSACTIONS",  // one transaction DAI_topup_inflow to operational permanent wallet 
+        "input": {
+            "transactions": [
+                {
+                    "txHash": "0x2411e7f0fff82cbfe9af976d8369e55b68e5f532e3fcd2ed0c1e8ae97aa13ce8",
+                    "timestamp":"1/11/2023 12:49:59",
+                    "amount": "135342.34", // i.e., enough to replenish the forecast 3-month runway; the submission request is "passive", i.e., infered from the reports and dashboard
+                    "currency": "DAI",
+                    "type": "topup_inflow", // from auditor to ops permanent wallet
+                    "receiver": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+                    "sender": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                    "newBalance": { //!!!maybe we should move this field into account, since "newBalance" is from the user perspective an aggregate state of the account at the end of the selected time period
+                        "DAI": "613,578.90" //is this the new balance (3-month runway)?
+                    }
+                }
+            ]
+        }
+    }, 
+    "state": {
+        "name": null,
+        "documentType": "maker/accounts-data",
+        "revision": 2,
+        "created": "1/11/2023 12:49:59", //does the created and lastModified state remain the same for the whole document model; does the document model state changes with every transaction? I assume that it does, therefore timestamp of the transaction is the same as "created" field in the state. 
+        "lastModified": "1/11/2023 12:49:59", // remove from the operations and just use what is inside the data
+        "data": {
+            "accounts": [
+                {
+                    "type": "virtual",
+                    "name": "Maker Protocol",
+                    "initialBalance": {
+                        "DAI": -5000000,
+                        "MKR": 96.00
+                    },
+                    "newBalance": {
+                        "DAI": 70000.00,
+                        "MKR": 96.00
+                    },
+                "Transactions": []
+            },
+                {
+                    "type": "group", 
+                    "name": "Core Unit Reserves", // this does not change since the transaction is a request submission from ops to auditor wallet <--dssvest
+                    "inflow": {
+                        "DAI": 348955.00,
+                        "MKR": 0.00
+                    },
+                    "outflow": {
+                        "DAI": 203984.00,
+                        "MKR": 0.00
+                    },
+                    "accounts": [
+                        {
+                            "type": "group",
+                            "name": "Active DssVest Streams", //
+                            "inflow": {
+                                "DAI": 130015.99
+                            },
+                            "outflow": {
+                                "DAI": 130101.02
+                            },
+                            "accounts": [
+                                {
+                                    "type": "dssvest",
+                                    "address": "eth:0x....",
+                                    "id": 15,
+                                    "initialBalance": {
+                                        "DAI": 100
+                                    },
+                                    "inflow": {                  //what is the inflow for dssvest: whatever gets accrued in that time period? 
+                                        "DAI": 560000
+                                    },
+                                    "outflow": {                  
+                                        "DAI": 135342.34 // auditor wallet request for submission, dss_pull
+                                    },
+                                    "newBalance": {
+                                        "DAI": 424657.66
+                                    },
+                                    "Transactions": [
+                                        {
+
+                                    
+                                            "txHash": "0x2411e7f0fff82cbfe9af976d8369e55b68e5f532e3fcd2ed0c1e8ae97aa13ce8",
+                                            "timestamp":"1/11/2023 12:49:59",
+                                            "amount": "135342.34", 
+                                            "currency": "DAI",
+                                            "type": "DAI_topup_outflow", //dss_pull? 
+                                            "receiver": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                                            "sender": "0xa4c22f0e25C6630B2017979AcF1f865e94695C4b ",
+                                            "newBalance": {
+                                                "DAI": "50000.00" 
+                                            }
+                                        }
+                                        
+                                    ]
+                                } 
+                            ]
+                        },
+                        { 
+                            "type": "wallet",
+                            "address": "eth:0x....",
+                            "name": "Auditor Wallet",	// when does the auditor wallet pull from dssvest? when the balance falls bellow the quarterly budget? pull =/= streaming 
+                                                            //when the submission request from ops wallet is more than what is available in the auditor wallet? 
+                            "initialBalance": {
+                                "DAI": 50000.00, // does newBalance from init doc become initialBalance in the next revision? Lets assume it does; this is relevant only if we're iterating the whole document with each transaction
+                                "MKR": 32.00
+                            },
+                            "inflow": {
+                                "DAI": 135342.34, // dss_pull
+                                "MKR": 0.00
+                            },
+                            "outflow": {
+                                "DAI": 135342.34,
+                                "MKR": 0.00
+                            },
+                            "newBalance": {
+                                "DAI": 50000.00,
+                                "MKR": 32.00
+                            },
+                            "Transactions": [
+                                {
+
+                                    
+                                    "txHash": "0x2411e7f0fff82cbfe9af976d8369e55b68e5f532e3fcd2ed0c1e8ae97aa13ce8",
+                                    "timestamp":"1/11/2023 12:49:59",
+                                    "amount": "135342.34", 
+                                    "currency": "DAI",
+                                    "type": "DAI_topup_outflow",
+                                    "receiver": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+                                    "sender": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                                    "newBalance": {
+                                        "DAI": "50000.00" 
+                                    }
+                                }
+                            
+                            ]
+                        },
+                        {
+                            "type": "group",
+                            "name": "Operational Wallets",
+                            "accounts": [
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Permanent Team",	
+                                    "initialBalance": {
+                                        "DAI": 50000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 135342.34,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 185342.34,
+                                        "MKR": 32.00
+                                    },
+                                    "transactions": [
+                                        {
+                                            "txHash": "0x2411e7f0fff82cbfe9af976d8369e55b68e5f532e3fcd2ed0c1e8ae97aa13ce8",
+                                            "timestamp":"1/11/2023 12:49:59",
+                                            "amount": "135342.34", // i.e., enough to replenish the forecast 3-month runway; the submission request is "passive", i.e., infered from the reports and dashboard
+                                            "currency": "DAI",
+                                            "type": "DAI_topup_inflow",
+                                            "receiver": "0xf95eb8ec63d6059ba62b0a8a7f843c7d92f41de2",
+                                            "sender": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                                            "newBalance": { //maybe we should move this field into account, since "newBalance" is from the user perspective an aggregate state of the account at the end of the selected time period
+                                                "DAI": "613,578.90" //is this the new balance (3-month runway)?
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Incubation Program",	
+                                    "initialBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Grants Program",
+                                    "initialBalaance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+		{
+			"type": "off-chain",
+			"name": "Payment Processor"
+		}
+	]
+}
+}
+}
+
+
+
+

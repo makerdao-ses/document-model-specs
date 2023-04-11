@@ -1,0 +1,364 @@
+
+
+
+{
+    "operation": {
+        "index":0,
+        "type": "INIT", // initializes with initial amounts
+        "input": {
+            "start": "2022-01-01 00:00:00",
+            "end": "2022-01-31 23:59:59",
+            "accounts": [
+                {
+                    "type": "virtual",
+                    "name": "Maker Protocol",
+                    "initialBalance": {
+                        "DAI": -5000000,
+                        "MKR": 96.00
+                    },
+                    "newBalance": {
+                        "DAI": 70000.00,
+                        "MKR": 96.00
+                    },
+                "Transactions": [] // not included in the input; not useful; doc processor can interpret the input and thus modify the doc state beyond the bare input
+            },
+                {
+                    "type": "group", 
+                    "name": "Core Unit Reserves",
+                    "inflow": {
+                        "DAI": 348955.00,
+                        "MKR": 0.00
+                    },
+                    "outflow": {
+                        "DAI": 203984.00,
+                        "MKR": 0.00
+                    },
+                    "accounts": [
+                        {
+                            "type": "group",
+                            "name": "Active DssVest Streams",
+                            "inflow": {
+                                "DAI": 130015.99
+                            },
+                            "outflow": {
+                                "DAI": 130101.02
+                            },
+                            "accounts": [
+                                {
+                                    "type": "dssvest",
+                                    "address": "eth:0x....",
+                                    "id": 15,
+                                    "initialBalance": {
+                                        "DAI": 105.04
+                                    },
+                                    "inflow": {
+                                        "DAI": 130015.99
+                                    },
+                                    "outflow": {
+                                        "DAI": 130101.02
+                                    },
+                                    "newBalance": {
+                                        "DAI": 20.01
+                                    },
+                                    "Transactions": [] //separate out the streaming transaction; multiple withdrawals scenario; how to indicate streaming
+                                } 
+                            ]
+                        },
+                        { 
+                            "type": "wallet",
+                            "address": "eth:0x....",
+                            "name": "Auditor Wallet",	
+                            "initialBalance": {
+                                "DAI": 20000.00,
+                                "MKR": 32.00
+                            },
+                            "inflow": {
+                                "DAI": 45000.00,
+                                "MKR": 0.00
+                            },
+                            "outflow": {
+                                "DAI": 15000.00,
+                                "MKR": 0.00
+                            },
+                            "newBalance": {                         //do new transactions take newBalance as initialBalance?
+                                "DAI": 50000.00,
+                                "MKR": 32.00
+                            },
+                            "Transactions": []
+                        },
+                        {
+                            "type": "group",
+                            "name": "Operational Wallets",
+                            "accounts": [
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Permanent Team",	
+                                    "initialBalance": {
+                                        "DAI": 20000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 45000.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 15000.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 50000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "transactions": [
+                                        {
+                                            "txHash": "...",
+                                            "timestamp":" ...",
+                                            "amount": "...",
+                                            "currency": "...",
+                                            "type": "inflow", // "outflow", 
+                                            "address": "...",
+                                            "newBalance": {
+                                                "DAI": "",
+                                                "ETH": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Incubation Program",	
+                                    "initialBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Grants Program",
+                                    "initialBalaance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "off-chain",
+                    "name": "Payment Processor"
+                }
+            ],
+
+    "state": {
+        "name": null,
+        "documentType": "powerhouse/onchain-data",
+        "revision": 1,
+        "created": "2022-01-01 00:00:00",
+        "lastModified": "2022-01-31 23:59:59",
+        "data": {
+            "accounts": [
+                {
+                    "type": "virtual",
+                    "name": "Maker Protocol",
+                    "initialBalance": {
+                        "DAI": -5000000,
+                        "MKR": 96.00
+                    },
+                    "newBalance": {
+                        "DAI": 70000.00,
+                        "MKR": 96.00
+                    },
+                "Transactions": []
+            },
+                {
+                    "type": "group", 
+                    "name": "Core Unit Reserves",
+                    "inflow": {
+                        "DAI": 348955.00,
+                        "MKR": 0.00
+                    },
+                    "outflow": {
+                        "DAI": 203984.00,
+                        "MKR": 0.00
+                    },
+                    "accounts": [
+                        {
+                            "type": "group",
+                            "name": "Active DssVest Streams",
+                            "inflow": {
+                                "DAI": 130015.99
+                            },
+                            "outflow": {
+                                "DAI": 130101.02
+                            },
+                            "accounts": [
+                                {
+                                    "type": "dssvest",
+                                    "address": "eth:0x....",
+                                    "id": 15,
+                                    "initialBalance": {
+                                        "DAI": 105.04
+                                    },
+                                    "inflow": {
+                                        "DAI": 130015.99
+                                    },
+                                    "outflow": {
+                                        "DAI": 130101.02
+                                    },
+                                    "newBalance": {
+                                        "DAI": 20.01
+                                    },
+                                    "Transactions": []
+                                } 
+                            ]
+                        },
+                        { 
+                            "type": "wallet",
+                            "address": "eth:0x....",
+                            "name": "Auditor Wallet",	
+                            "initialBalance": {
+                                "DAI": 20000.00,
+                                "MKR": 32.00
+                            },
+                            "inflow": {
+                                "DAI": 45000.00,
+                                "MKR": 0.00
+                            },
+                            "outflow": {
+                                "DAI": 15000.00,
+                                "MKR": 0.00
+                            },
+                            "newBalance": {
+                                "DAI": 50000.00,
+                                "MKR": 32.00
+                            },
+                            "Transactions": []
+                        },
+                        {
+                            "type": "group",
+                            "name": "Operational Wallets",
+                            "accounts": [
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Permanent Team",	
+                                    "initialBalance": {
+                                        "DAI": 20000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 45000.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 15000.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 50000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "transactions": [
+                                        {
+                                            "txHash": "...",
+                                            "timestamp":" ...",
+                                            "amount": "...",
+                                            "currency": "...",
+                                            "type": "inflow", // "outflow", 
+                                            "address": "...",
+                                            "newBalance": {
+                                                "DAI": "",
+                                                "ETH": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Incubation Program",	
+                                    "initialBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Grants Program",
+                                    "initialBalaance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+		{
+			"type": "off-chain",
+			"name": "Payment Processor"
+		}
+	]
+}
+}
+}
+}
+}
+
