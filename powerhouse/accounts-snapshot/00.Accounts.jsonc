@@ -1,0 +1,91 @@
+{
+    "operation": null,
+    "state": {
+        "name": null,
+        "documentType": "powerhouse/account-data",
+        "revision": 0,
+        "created": "2023-03-30 12:15:01",
+        "lastModified": "2023-03-30 12:15:01",
+        "data": {
+			"start": null,
+			"end": null,
+			"accounts": [ //acccounts are empty
+					{
+						"type": "virtual",
+						"name": null,
+						"initialBalance": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"newBalance": {
+							"quoteCurrency": null,
+							"amount": 0
+						}, 
+						"Transactions": []
+					},
+					{
+						"type": "group", 
+						"name": null,
+						"inflow": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"outflow": {
+							"quoteCurrency": null,
+							"amount": 0
+							}
+					},
+					{ 
+						"type": "wallet",
+						"address": null,
+						"name": null,	
+						"initialBalance": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"inflow": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"outflow": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"newBalance": {
+							"quoteCurrency": null,
+							"amount": 0	
+						},
+						"Transactions": []
+					},
+					{ 
+						"type": "stream", // DAO or org specific funding streams, if needed. 
+						"address": null,
+						"name": null,	
+						"initialBalance": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"inflow": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"outflow": {
+							"quoteCurrency": null,
+							"amount": 0
+						},
+						"newBalance": {
+							"quoteCurrency": null,
+							"amount": 0		
+						},
+						"Transactions": []
+					},
+					{
+					"type": "off-chain", 
+					"name": null
+					}			
+				]		
+          	  }
+       	 }
+   	 }
+
+

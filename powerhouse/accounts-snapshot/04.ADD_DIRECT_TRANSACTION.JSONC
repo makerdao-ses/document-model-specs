@@ -1,0 +1,231 @@
+
+
+
+{
+    "operation": {
+        "index":3,
+        "type": "ADD_DIRECT_TRANSACTION", // MIP14: Protocol DAI Transfer | https://mips.makerdao.com/mips/details/MIP14c2SP5 // would we want a table with just the Maker protocol monhtly overview across different budget categories (CU, SPFs)
+        "input": {
+            "accounts": [
+                {
+                    "txHash": "0x4c37bc9f99957ccb0439a8eaeac44f403fbcbf52f50103dcbdbfedc96ab6fe79",
+                    "timestamp":"1/3/2023 14:20:11",
+                    "amount": "752260.312825091", // is this a standalone tx from the maker protocol? Would say so because the "methods" for this wallet are "poll, exec..."
+                    "currency": "DAI",
+                    "type": "DAI_topup", // directly from the protocol to auditor wallet
+                    "receiver": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                    "sender": "0x06ADa798f9323392cA30C755383Af879bd853168",
+                    "newBalance": {
+                        "DAI": "802260.312825091" //currently we're calculating transaction-relative new balances
+            }
+        }         
+        ]
+        }
+    }, 
+    "state": {
+        "name": null,
+        "documentType": "maker/accounts-data",
+        "revision": 4,
+        "created": "1/14/2023 12:49:59", // timestamp of the tx
+        "lastModified": "1/14/2023 12:49:59",
+        "data": {
+            "accounts": [
+                {
+                    "type": "virtual",
+                    "name": "Maker Protocol",
+                    "initialBalance": {
+                        "DAI": 100000.00,
+                        "MKR": 96.00
+                    },
+                    "newBalance": {
+                        "DAI": -652260.312825091,
+                        "MKR": 96.00
+                    },
+                "Transactions": [
+
+                    {
+
+                        "txHash": "0x4c37bc9f99957ccb0439a8eaeac44f403fbcbf52f50103dcbdbfedc96ab6fe79",
+                        "timestamp":"1/3/2023 14:20:11",
+                        "amount": "752260.312825091", // i
+                        "currency": "DAI",
+                        "type": "DAI_topup_direct", //
+                        "receiver": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                        "sender": "0x06ADa798f9323392cA30C755383Af879bd853168",
+                        "newBalance": {
+                            "DAI": "-652260.312825091" //
+                    }
+                }
+
+                ]
+            
+           },
+                {
+                    "type": "group", 
+                    "name": "Core Unit Reserves", 
+                    "inflow": {
+                        "DAI": 348955.00, // calculated at the same time
+                        "MKR": 0.00
+                    },
+                    "outflow": {
+                        "DAI": 206984.00, //remains the same b/c dss_pull
+                        "MKR": 0.00
+                    },
+                    "accounts": [
+                        {
+                            "type": "group",
+                            "name": "Active DssVest Streams", //
+                            "inflow": {
+                                "DAI": 130015.99
+                            },
+                            "outflow": {
+                                "DAI": 130101.02
+                            },
+                            "accounts": [
+                                {
+                                    "type": "dssvest",
+                                    "address": "eth:0x....",
+                                    "id": 15,
+                                    "initialBalance": {
+                                        "DAI": 105.04
+                                    },
+                                    "inflow": {                  //what is the inflow for dssvest: whatever gets accrued in that time period? 
+                                        "DAI": 130015.99
+                                    },
+                                    "outflow": {                  
+                                        "DAI": 130101.02
+                                    },
+                                    "newBalance": {
+                                        "DAI": 20.01
+                                    },
+                                    "Transactions": []
+                                } 
+                            ]
+                        },
+                        { 
+                            "type": "wallet",
+                            "address": "eth:0x....",
+                            "name": "Auditor Wallet",	// when does the auditor wallet pull from dssvest? when the balance falls bellow the quarterly budget? pull =/= streaming 
+                                                            //when the submission request from ops wallet is more than what is available in the auditor wallet? 
+                            "initialBalance": {
+                                "DAI": 20000.00, // does newBalance from init doc become initialBalance in the next revision? Lets assume it does; this is relevant only if we're iterating the whole document with each transaction
+                                "MKR": 32.00
+                            },
+                            "inflow": {
+                                "DAI": 752260.312825091, //
+                                "MKR": 0.00
+                            },
+                            "outflow": {
+                                "DAI": 0.00,
+                                "MKR": 0.00
+                            },
+                            "newBalance": {
+                                "DAI": 772260312825091,
+                                "MKR": 32.00
+                            },
+                            "Transactions": [
+                                {
+
+                                        "txHash": "0x4c37bc9f99957ccb0439a8eaeac44f403fbcbf52f50103dcbdbfedc96ab6fe79",
+                                        "timestamp":"1/3/2023 14:20:11",
+                                        "amount": "752260.312825091", // is this a standalone tx from the maker protocol? Would say so because the "methods" for this wallet are "poll, exec..."
+                                        "currency": "DAI",
+                                        "type": "DAI_topup_inflow", // should we call this dssvest_pull? if we assume, that it's not directly from the protocol
+                                        "receiver": "0x87acdd9208f73bfc9207e1f6f0fde906bca95cc6",
+                                        "sender": "0x06ADa798f9323392cA30C755383Af879bd853168",
+                                        "newBalance": {
+                                            "DAI": "772260312825091" //currently we're calculating transaction-relative new balances
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "group",
+                            "name": "Operational Wallets",
+                            "accounts": [
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Permanent Team",	
+                                    "initialBalance": {
+                                        "DAI": 50000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 135342.34,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 185342.34,
+                                        "MKR": 32.00
+                                    },
+                                    "transactions": [
+                                        {
+                                            }    //should we keep the transactions from the previous states? or can it remember the balances?
+                                        
+                                    ]
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Incubation Program",	
+                                    "initialBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                },
+                                {
+                                    "type": "wallet",
+                                    "address": "eth:0x....",
+                                    "name": "Grants Program",
+                                    "initialBalaance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "inflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "outflow": {
+                                        "DAI": 0.00,
+                                        "MKR": 0.00
+                                    },
+                                    "newBalance": {
+                                        "DAI": 10000.00,
+                                        "MKR": 32.00
+                                    },
+                                    "Transactions": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+		{
+			"type": "off-chain",
+			"name": "Payment Processor"
+		}
+	]
+}
+}
+}
+
+
+
+
